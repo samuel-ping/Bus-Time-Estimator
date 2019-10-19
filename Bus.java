@@ -1,6 +1,10 @@
 
-public abstract class Bus {
+public class Bus {
 	protected Stop[] route;
+	
+	public Bus(Stop[] r) {
+		route = r;
+	}
 	
 	public Stop[] getRoute() {
 		return route;
@@ -24,7 +28,7 @@ public abstract class Bus {
 		int index = 0;
 		for(int i = 0; i < route.length; i++) {
 			if(name.equals(route[i].getStopName())) {
-				index = i;
+				return index;
 			}
 		}
 		return index;
