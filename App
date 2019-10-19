@@ -1,7 +1,7 @@
 public class App {
 	String start;
 	String end;
-	Bus LX;
+	Bus LX, EE, B, REXL, REXB, H, A, F;
 	public App(String s, String e) {
 		start = s;
 		end = e;
@@ -18,7 +18,7 @@ public class App {
 			numStops(BusF.route, BusF.startIndex(start), BusF.endIndex(end));
 		}
 		if (BusLX.contains(start, end)){
-			calcTime(BusLX.route, BusLX.startIndex(start), BusLX.endIndex(end));
+			calcTime(LX, BusLX.startIndex(start), BusLX.endIndex(end));
 			numStops(BusLX.route, BusLX.startIndex(start), BusLX.endIndex(end));
 		}
 		if (BusREXL.contains(start, end)){
