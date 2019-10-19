@@ -24,7 +24,7 @@ public class Bus {
 		return false;
 	}
 	
-	public int getStartingIndex(String name) {
+	public int getIndex(String name) {
 		int index = 0;
 		for(int i = 0; i < route.length; i++) {
 			if(name.equals(route[i].getStopName())) {
@@ -33,4 +33,5 @@ public class Bus {
 		}
 		return index;
 	}
+
 }
