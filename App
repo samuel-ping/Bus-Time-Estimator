@@ -1,0 +1,81 @@
+public class App {
+	String start;
+	String end;
+
+	public App(String s, String e) {
+		start = s;
+		end = e;
+	}
+
+	public String checkBus() {
+		if (BusEE.contains(start, end)) {
+			calcTime(BusEE.route, BusEE.startIndex(start), BusEE.endIndex(end));
+			numStops(BusEE.route, BusEE.startIndex(start), BusEE.endIndex(end));
+		}
+		if (BusF.contains(start, end)) {
+			calcTime(BusF.route, BusF.startIndex(start), BusF.endIndex(end));
+			numStops(BusF.route, BusF.startIndex(start), BusF.endIndex(end));
+		}
+		if (BusLX.contains(start, end)){
+			calcTime(BusLX.route, BusLX.startIndex(start), BusLX.endIndex(end));
+			numStops(BusLX.route, BusLX.startIndex(start), BusLX.endIndex(end));
+		}
+		if (BusREXL.contains(start, end)){
+			calcTime(BusREXL.route, BusREXL.startIndex(start), BusREXL.endIndex(end));
+			numStops(BusREXL.route, BusREXL.startIndex(start), BusREXL.endIndex(end));
+		}
+		if (BusB.contains(start, end)){
+			calcTime(BusB.route, BusB.startIndex(start), BusB.endIndex(end));
+			numStops(BusB.route, BusB.startIndex(start), BusB.endIndex(end));
+		}
+		if (BusA.contains(start, end)){
+			calcTime(BusA.route, BusA.startIndex(start), BusA.endIndex(end));
+			numStops(BusA.route, BusA.startIndex(start), BusA.endIndex(end));
+		}
+		if (BusH.contains(start, end)){
+			calcTime(BusH.route, BusH.startIndex(start), BusH.endIndex(end));
+			numStops(BusH.route, BusH.startIndex(start), BusH.endIndex(end));
+		}
+		if (BusREXB.contains(start, end)){
+			calcTime(BusREXB.route, BusREXB.startIndex(start), BusREXB.endIndex(end));
+			numStops(BusREXB.route, BusREXB.startIndex(start), BusREXB.endIndex(end));
+		}
+
+	}
+
+	public int calcTime(Stop[] r, int startIndex, int endIndex) {
+		int totalTime = 0;
+		if (endIndex < startIndex) {
+			for (int i = startIndex; i < r.length; i++) {
+				totalTime = r[i].getTime() + totalTime;
+			}
+			for (int j = 0; j < endIndex; j++) {
+				totalTime = r[j].getTime() + totalTime;
+			}
+		} else {
+			for (int i = startIndex; i < endIndex; i++) {
+				totalTime = r[i].getTime() + totalTime;
+			}
+		}
+		
+		return totalTime;
+	}
+	
+	public int numStops(Stop[] r, int startIndex, int endIndex) {
+		int totalStops = 0;
+		if (endIndex < startIndex) {
+			for (int i = startIndex; i < r.length; i++) {
+				totalStops++;
+			}
+			for (int j = 0; j < endIndex; j++) {
+				totalStops++;
+			}
+		} else {
+			for (int i = startIndex; i < endIndex; i++) {
+				totalStops++;
+			}
+		}
+		
+		return totalStops;
+	}
+}
