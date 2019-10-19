@@ -10,43 +10,43 @@ public class App {
 
 	public String checkBus() {
 		if (EE.contains(start, end)) {
-			calcTime(EE.route, EE.getStartingIndex(start), EE.getEndingIndex(end));
-			numStops(EE.route, EE.getStartingIndex(start), EE.getEndingIndex(end));
+			calcTime(EE.route, EE.getIndex(start), EE.getIndex(end));
+			numStops(EE.route, EE.getIndex(start), EE.getIndex(end));
 			return "EE";
 		}
 		if (F.contains(start, end)) {
-			calcTime(F.route, F.getStartingIndex(start), F.getEndingIndex(end));
-			numStops(F.route, F.getStartingIndex(start), F.getEndingIndex(end));
+			calcTime(F.route, F.getIndex(start), F.getIndex(end));
+			numStops(F.route, F.getIndex(start), F.getIndex(end));
 			return "F";
 		}
 		if (LX.contains(start, end)){
-			calcTime(LX.route, LX.getStartingIndex(start), LX.getEndingIndex(end));
-			numStops(LX.route, LX.getStartingIndex(start), LX.getEndingIndex(end));
+			calcTime(LX.route, LX.getIndex(start), LX.getIndex(end));
+			numStops(LX.route, LX.getIndex(start), LX.getIndex(end));
 			return "LX";
 		}
 		if (REXL.contains(start, end)){
-			calcTime(REXL.route, REXL.getStartingIndex(start), REXL.getEndingIndex(end));
-			numStops(REXL.route, REXL.getStartingIndex(start), REXL.getEndingIndex(end));
+			calcTime(REXL.route, REXL.getIndex(start), REXL.getIndex(end));
+			numStops(REXL.route, REXL.getIndex(start), REXL.getIndex(end));
 			return "REXL";
 		}
 		if (B.contains(start, end)){
-			calcTime(B.route, B.getStartingIndex(start), B.getEndingIndex(end));
-			numStops(B.route, B.getStartingIndex(start), B.getEndingIndex(end));
+			calcTime(B.route, B.getIndex(start), B.getIndex(end));
+			numStops(B.route, B.getIndex(start), B.getIndex(end));
 			return "B";
 		}
 		if (A.contains(start, end)){
-			calcTime(A.route, A.getStartingIndex(start), A.getEndingIndex(end));
-			numStops(A.route, A.getStartingIndex(start), A.getEndingIndex(end));
+			calcTime(A.route, A.getIndex(start), A.getIndex(end));
+			numStops(A.route, A.getIndex(start), A.getIndex(end));
 			return "A";
 		}
 		if (H.contains(start, end)){
-			calcTime(H.route, H.getStartingIndex(start), H.getEndingIndex(end));
-			numStops(H.route, H.getStartingIndex(start), H.getEndingIndex(end));
+			calcTime(H.route, H.getIndex(start), H.getIndex(end));
+			numStops(H.route, H.getIndex(start), H.getIndex(end));
 			return "H";
 		}
 		if (REXB.contains(start, end)){
-			calcTime(REXB.route, REXB.getStartingIndex(start), REXB.getEndingIndex(end));
-			numStops(REXB.route, REXB.getStartingIndex(start), REXB.getEndingIndex(end));
+			calcTime(REXB.route, REXB.getIndex(start), REXB.getIndex(end));
+			numStops(REXB.route, REXB.getIndex(start), REXB.getIndex(end));
 			return "REXB";
 		}
 		return "No buses take you to this place";
@@ -57,14 +57,14 @@ public class App {
 		int totalTime = 0;
 		if (endIndex < startIndex) {
 			for (int i = startIndex; i < r.length; i++) {
-				totalTime = r[i].getTime() + totalTime;
+				totalTime = r[i].getTimeToNextStop() + totalTime;
 			}
 			for (int j = 0; j < endIndex; j++) {
-				totalTime = r[j].getTime() + totalTime;
+				totalTime = r[j].getTimeToNextStop() + totalTime;
 			}
 		} else {
 			for (int i = startIndex; i < endIndex; i++) {
-				totalTime = r[i].getTime() + totalTime;
+				totalTime = r[i].getTimeToNextStop() + totalTime;
 			}
 		}
 		
@@ -87,5 +87,13 @@ public class App {
 		}
 		
 		return totalStops;
+	}
+	
+	public String print() {
+		return "Take the " + checkBus() + " bus.\n The journey takes ";
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 }
