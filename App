@@ -1,10 +1,11 @@
 public class App {
 	String start;
 	String end;
-
+	Bus LX;
 	public App(String s, String e) {
 		start = s;
 		end = e;
+		LX = new Bus(new Stop[] {new Stop("College Avenue Student Center", 5), new Stop("Scott Hall", 2), new Stop("Train Station (by Somerset St)", 3)});
 	}
 
 	public String checkBus() {
