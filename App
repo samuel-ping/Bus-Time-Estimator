@@ -9,38 +9,47 @@ public class App {
 	}
 
 	public String checkBus() {
-		if (BusEE.contains(start, end)) {
-			calcTime(BusEE.route, BusEE.startIndex(start), BusEE.endIndex(end));
-			numStops(BusEE.route, BusEE.startIndex(start), BusEE.endIndex(end));
+		if (EE.contains(start, end)) {
+			calcTime(EE.route, EE.getStartingIndex(start), EE.getEndingIndex(end));
+			numStops(EE.route, EE.getStartingIndex(start), EE.getEndingIndex(end));
+			return "EE";
 		}
-		if (BusF.contains(start, end)) {
-			calcTime(BusF.route, BusF.startIndex(start), BusF.endIndex(end));
-			numStops(BusF.route, BusF.startIndex(start), BusF.endIndex(end));
+		if (F.contains(start, end)) {
+			calcTime(F.route, F.getStartingIndex(start), F.getEndingIndex(end));
+			numStops(F.route, F.getStartingIndex(start), F.getEndingIndex(end));
+			return "F";
 		}
-		if (BusLX.contains(start, end)){
-			calcTime(LX, BusLX.startIndex(start), BusLX.endIndex(end));
-			numStops(BusLX.route, BusLX.startIndex(start), BusLX.endIndex(end));
+		if (LX.contains(start, end)){
+			calcTime(LX.route, LX.getStartingIndex(start), LX.getEndingIndex(end));
+			numStops(LX.route, LX.getStartingIndex(start), LX.getEndingIndex(end));
+			return "LX";
 		}
-		if (BusREXL.contains(start, end)){
-			calcTime(BusREXL.route, BusREXL.startIndex(start), BusREXL.endIndex(end));
-			numStops(BusREXL.route, BusREXL.startIndex(start), BusREXL.endIndex(end));
+		if (REXL.contains(start, end)){
+			calcTime(REXL.route, REXL.getStartingIndex(start), REXL.getEndingIndex(end));
+			numStops(REXL.route, REXL.getStartingIndex(start), REXL.getEndingIndex(end));
+			return "REXL";
 		}
-		if (BusB.contains(start, end)){
-			calcTime(BusB.route, BusB.startIndex(start), BusB.endIndex(end));
-			numStops(BusB.route, BusB.startIndex(start), BusB.endIndex(end));
+		if (B.contains(start, end)){
+			calcTime(B.route, B.getStartingIndex(start), B.getEndingIndex(end));
+			numStops(B.route, B.getStartingIndex(start), B.getEndingIndex(end));
+			return "B";
 		}
-		if (BusA.contains(start, end)){
-			calcTime(BusA.route, BusA.startIndex(start), BusA.endIndex(end));
-			numStops(BusA.route, BusA.startIndex(start), BusA.endIndex(end));
+		if (A.contains(start, end)){
+			calcTime(A.route, A.getStartingIndex(start), A.getEndingIndex(end));
+			numStops(A.route, A.getStartingIndex(start), A.getEndingIndex(end));
+			return "A";
 		}
-		if (BusH.contains(start, end)){
-			calcTime(BusH.route, BusH.startIndex(start), BusH.endIndex(end));
-			numStops(BusH.route, BusH.startIndex(start), BusH.endIndex(end));
+		if (H.contains(start, end)){
+			calcTime(H.route, H.getStartingIndex(start), H.getEndingIndex(end));
+			numStops(H.route, H.getStartingIndex(start), H.getEndingIndex(end));
+			return "H";
 		}
-		if (BusREXB.contains(start, end)){
-			calcTime(BusREXB.route, BusREXB.startIndex(start), BusREXB.endIndex(end));
-			numStops(BusREXB.route, BusREXB.startIndex(start), BusREXB.endIndex(end));
+		if (REXB.contains(start, end)){
+			calcTime(REXB.route, REXB.getStartingIndex(start), REXB.getEndingIndex(end));
+			numStops(REXB.route, REXB.getStartingIndex(start), REXB.getEndingIndex(end));
+			return "REXB";
 		}
+		return "No buses take you to this place";
 
 	}
 
