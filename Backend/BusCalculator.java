@@ -1,6 +1,15 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.ListIterator;
+
+import com.google.gson.Gson;
+
+import data.RouteID;
 
 public class BusCalculator {
 	private ArrayList<Bus> busList;
@@ -10,19 +19,6 @@ public class BusCalculator {
 	private Bus LX;
 
 	public BusCalculator(String s, String e) {
-		// LinkedList<Stop> REXB = new LinkedList<Stop>();
-		// REXB.add(new Stop("Red Oak Lane", 5));
-		// REXB.add(new Stop("Lipman Hall", 2));
-		// REXB.add(new Stop("College Hall", 2));
-		// REXB.add(new Stop("Hill Center (NB)", 2));
-		// REXB.add(new Stop("Allison Road Classroom Building", 2));
-		// REXB.add(new Stop("Hill Center (SB)", 3));
-		// REXB.add(new Stop("Public Safety Building", 4));
-		// Bus two = new Bus("REXB", REXB);
-		//
-		// busList = new ArrayList<Bus>();
-		// busList.add(two);
-
 		start = s;
 		end = e;
 	}
@@ -47,11 +43,8 @@ public class BusCalculator {
 		int totalTime = 0;
 		LinkedList<Stop> temp = busList.get(busIndex).getBusRoute();
 
-		// System.out.println(endIndex);
-
 		if (startIndex < endIndex) {
 			for (int i = startIndex; i < endIndex; i++) {
-				// System.out.println(totalTime);
 				totalTime += temp.get(i).getTimeToNext();
 			}
 
