@@ -12,7 +12,6 @@ import com.google.gson.Gson;
 import data.RouteID;
 
 public class DataArrays {
-	Map<Integer, String> routeMap;
 	int[] routeIDs;
 	boolean[] activeBuses;
 	String[] longNames;
@@ -95,7 +94,7 @@ public class DataArrays {
 		return activeBuses;
 	}
 
-	public boolean[] getLongNames() {
+	public String[] getLongNames() {
 		final String RUTGERS_AGENCY_ID = "1323";
 //		final String ROUTES = "routes";
 		final String STOPS = "stops";
@@ -132,7 +131,19 @@ public class DataArrays {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return activeBuses;
+		return longNames;
+	}
+	
+	public static void main(String[] args) {
+		DataArrays one = new DataArrays();
+		System.out.println(Arrays.toString(one.getRouteIDArray()));
+		System.out.println(one.getRouteIDArray().length);
+		
+		System.out.println(Arrays.toString(one.getLongNames()));
+		System.out.println(one.getLongNames().length);
+		
+		System.out.println(Arrays.toString(one.getActiveBusesArray()));
+		System.out.println(one.getActiveBusesArray().length);
 	}
 
 }
