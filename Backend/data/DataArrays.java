@@ -133,15 +133,15 @@ public class DataArrays {
 		}
 		return longNames;
 	}
-	
+
 	public static void main(String[] args) {
 		DataArrays one = new DataArrays();
 		System.out.println(Arrays.toString(one.getRouteIDArray()));
 		System.out.println(one.getRouteIDArray().length);
-		
+
 		System.out.println(Arrays.toString(one.getLongNames()));
 		System.out.println(one.getLongNames().length);
-		
+
 		System.out.println(Arrays.toString(one.getActiveBusesArray()));
 		System.out.println(one.getActiveBusesArray().length);
 	}
