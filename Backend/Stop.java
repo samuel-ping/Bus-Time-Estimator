@@ -1,4 +1,3 @@
-
 public class Stop {
 	private String nameOfstop;
 	private int timeToNext;
