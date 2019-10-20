@@ -21,6 +21,25 @@ public class HashMapStopRoute {
 		}
 	}
 	
+//	public boolean DoThoseStopsExist (String s, String e)
+//	{
+//		Set temp = stopIDMap.keySet();
+//		String[] stops = (String[]) temp.toArray();
+//		boolean bool1 = false;
+//		boolean bool2 = false;
+//		for(int i = 0; i < stops.length; i++)
+//		{
+//			if (stops[i].equals(s))
+//				bool1 = true;
+//			if (stops[i].equals(e))
+//				bool2 = true;
+//		}
+//		
+//		if(bool1 && bool2)
+//			return true;
+//		return false;
+//	}
+	
 	public ArrayList<Integer> compare(String s, String e) {
 		String[] start = stopIDMap.get(s);
 		String[] end = stopIDMap.get(e);

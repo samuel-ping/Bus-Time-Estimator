@@ -1,6 +1,7 @@
 package stopdata;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import data.HashMapRoute;
 
@@ -13,6 +14,29 @@ public class BusName {
 	public BusName(String s, String e) {
 		start = s;
 		end = e;
+	}
+	
+	public BusName() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public boolean DoesThisStopExist (String s)
+	{
+		Set<String> temp = compare.stopIDMap.keySet();
+		int n = temp.size();
+		String[] stops = new String[n];
+		
+		int j = 0;
+		for(String x : temp)
+		{
+			stops[j++] = x;
+		}
+		for(int i = 0; i < stops.length; i++)
+		{
+			if (stops[i].equals(s))
+				return true;
+		}
+		return false;
 	}
 
 	public String findName() {
