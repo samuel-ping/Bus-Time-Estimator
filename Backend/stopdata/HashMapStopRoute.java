@@ -24,6 +24,8 @@ public class HashMapStopRoute {
 	public ArrayList<Integer> compare(String s, String e) {
 		String[] start = stopIDMap.get(s);
 		String[] end = stopIDMap.get(e);
+//		System.out.println("start: " + Arrays.toString(start));
+//		System.out.println("\nEnd: " + Arrays.toString(end));
 		ArrayList<Integer> possibleRoutes = new ArrayList<Integer>();
 		for(int i = 0; i< start.length; i++) {
 			for(int j = 0; j < end.length; j++) {
