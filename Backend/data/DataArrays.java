@@ -25,7 +25,7 @@ public class DataArrays {
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("GET");
 			con.setRequestProperty("X-RapidAPI-Host", "transloc-api-1-2.p.rapidapi.com");
-			con.setRequestProperty("X-RapidAPI-Key", ""); // add your
+			con.setRequestProperty("X-RapidAPI-Key", "9ea1213158msh1664b928d1a0d2cp1992d0jsna4d2e372eae4"); // add your
 																											// key here,
 																											// unique
 																											// for
@@ -65,7 +65,7 @@ public class DataArrays {
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("GET");
 			con.setRequestProperty("X-RapidAPI-Host", "transloc-api-1-2.p.rapidapi.com");
-			con.setRequestProperty("X-RapidAPI-Key", ""); // add your
+			con.setRequestProperty("X-RapidAPI-Key", "9ea1213158msh1664b928d1a0d2cp1992d0jsna4d2e372eae4"); // add your
 																											// key here,
 																											// unique
 																											// for
@@ -105,7 +105,7 @@ public class DataArrays {
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("GET");
 			con.setRequestProperty("X-RapidAPI-Host", "transloc-api-1-2.p.rapidapi.com");
-			con.setRequestProperty("X-RapidAPI-Key", ""); // add your
+			con.setRequestProperty("X-RapidAPI-Key", "9ea1213158msh1664b928d1a0d2cp1992d0jsna4d2e372eae4"); // add your
 																											// key here,
 																											// unique
 																											// for

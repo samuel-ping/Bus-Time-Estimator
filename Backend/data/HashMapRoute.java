@@ -19,6 +19,19 @@ public class HashMapRoute {
 			}
 		}
 	}
+	
+	public boolean getisActive(int routeID) {
+		array = new DataArrays();
+		boolean[] x = array.getActiveBusesArray();
+		for(int i = 0; i<x.length; i++) {
+			if(x[i] == routeID)
+				
+		}
+	}
+	
+	public HashMap<Integer, String> getMap(){
+		return (HashMap<Integer, String>) routeIDMap;
+	}
 
 	public String toString() {
 		String output = "";
