@@ -1,26 +1,27 @@
-package BusStop;
 
 public class Stop {
-	int min;
-	String name;
-	
-	public Stop(String s, int m)
-	{
-		min = m;
-		name = s;
+	private String nameOfstop;
+	private int timeToNext;
+
+	public Stop(String name, int time) {
+		nameOfstop = name;
+		timeToNext = time;
 	}
-	public int getMin() {
-		return min;
+
+	public String getNameOfstop() {
+		return nameOfstop;
 	}
-	public void setMin(int min) {
-		this.min = min;
+
+	public void setNameOfstop(String nameOfstop) {
+		this.nameOfstop = nameOfstop;
 	}
-	public String getName() {
-		return name;
+
+	public int getTimeToNext() {
+		return timeToNext;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setTimeTonext(int timeToNext) {
+		this.timeToNext = timeToNext;
 	}
-	
-	
+
 }
