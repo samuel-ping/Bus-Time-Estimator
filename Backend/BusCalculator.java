@@ -82,4 +82,8 @@ public class BusCalculator {
 		}
 		return numStops;
 	}
+	
+	public static void main(String[] gerg) {
+		BusCalculator calc = new BusCalculator("this", "that");
+	}
 }
